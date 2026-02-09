@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-200 border border-transparent;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-border text-foreground hover:bg-secondary;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-muted-foreground hover:bg-secondary hover:text-foreground;
+  }
+
+  .card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-sm;
+  }
+
+  .input {
+    @apply w-full px-3 py-2.5 border border-border rounded-md text-sm bg-background text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-accent;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-md text-muted-foreground text-sm font-medium cursor-pointer transition-all duration-200 hover:bg-secondary hover:text-foreground;
+  }
+
+  .nav-item.active {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .tag {
+    @apply px-3 py-1.5 border border-border rounded-md text-xs cursor-pointer bg-background text-muted-foreground hover:border-primary hover:text-primary;
+  }
+
+  .tag.selected {
+    @apply bg-accent border-primary text-primary font-medium;
+  }
+}
